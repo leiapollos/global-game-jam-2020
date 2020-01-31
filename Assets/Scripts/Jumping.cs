@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Jumping : PlayerAction
-{
-    Jumping(Player _player)
+{   
+    public Jumping(Player _player) : base(_player)
     {
-        player = _player;
     }
-
+    
     public override void DoAction()
     {
         base.DoAction();

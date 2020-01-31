@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerAction
+public class PlayerAction
 {
-    protected Player player;
+    Player player;
 
-    // Start is called before the first frame update
-    void Start()
+    public PlayerAction(Player _player)
     {
-        
+        player = _player;
     }
 
     public virtual void DoAction() { }
