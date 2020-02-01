@@ -45,6 +45,7 @@ public class Jump : PlayerAction
         }
         else if (!Input.GetButton("Jump"))
             rb.velocity += Vector2.up * Physics2D.gravity.y * (player.jumpMultiplier - 1) * Time.deltaTime;
-
+        else
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (player.highJumpMultiplier - 1) * Time.deltaTime;
     }
 }
