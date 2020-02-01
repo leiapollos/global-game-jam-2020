@@ -11,11 +11,7 @@ public class Jump : PlayerAction
     public Jump(Player _player) : base(_player)
     {
         rb = player.GetComponent<Rigidbody2D>();
-    }
-
-    Bounds GetBounds()
-    {
-        return player.GetComponent<SpriteRenderer>().bounds;
+        player.animator.SetTrigger("Jump");
     }
 
     public override void DoAction()
@@ -31,18 +27,11 @@ public class Jump : PlayerAction
         if (rb.velocity.y <= 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
-            var bounds = GetBounds();
-            if (Physics2D.BoxCast(
-            new Vector2(bounds.min.x + bounds.extents.x, bounds.min.y),
-            new Vector2(bounds.extents.x, 0.1f),
-            0,
-            Vector2.down,
-            0.1f,
-            ~LayerMask.GetMask("Player")
-            ).collider)
+            if (player.isGrounded())
             {
                 Debug.Log("oof");
                 player.action = new Idle(player);
+                player.animator.SetTrigger("Landing");
             }
         }
         else if (!Input.GetButton("Jump"))

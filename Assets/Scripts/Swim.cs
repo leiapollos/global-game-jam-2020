@@ -6,6 +6,7 @@ public class Swim : PlayerAction
 {
     public Swim(Player _player) : base(_player)
     {
+        player.animator.SetBool("SurfaceSwim", true);
     }
 
     public override void DoAction()
@@ -16,5 +17,8 @@ public class Swim : PlayerAction
         pos.y -= 0.5f;
         if (Input.GetKey(KeyCode.Space) == true) pos.y += 1.0f;
         player.transform.position = pos;
+        ///
+        //HOW DO WE EXIT SWIMMING ACTION? COLLIDER WITH WATER?
+        ///
     }
 }

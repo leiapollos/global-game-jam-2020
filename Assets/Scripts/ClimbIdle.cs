@@ -6,13 +6,21 @@ public class ClimbIdle : PlayerAction
 {
     public ClimbIdle(Player _player) : base(_player)
     {
+        player.animator.SetFloat("AnimationSpeed", 0.0f);
     }
 
     public override void DoAction()
     {
         base.DoAction();
         //climbidle
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetButton("Jump"))
+        {
+            player.animator.SetFloat("AnimationSpeed", 1.0f);
+            rigidbody.gravityScale = 1;
+            player.animator.SetBool("Climb", false);
+            player.action = new Jump(player);
+        }
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
             player.action = new Climb(player);
         }

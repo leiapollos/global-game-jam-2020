@@ -22,5 +22,7 @@ public class PlayerAction
     public virtual void OnCollisionExit(Collision2D col) {
         
     }
-    public virtual void DoAction() { }
+    public virtual void DoAction() {
+        player.spriteRenderer.flipX = rigidbody.velocity.x < 0.1;
+    }
 }
