@@ -25,6 +25,10 @@ public class Fall : PlayerAction
                 hasLanded = true;
             }
         }
+        else if (Input.GetAxisRaw("Vertical") > 0 && player.CanClimb)
+        {
+            player.action = new Climb(player);
+        }
         else
         {
             Vector3 vel = rigidbody.velocity;
