@@ -20,6 +20,7 @@ public class Scenery : MonoBehaviour
 
     public void enableWater()
     {
+        Debug.Log("wwwww");
         foreach (GameObject g in solidFloorWater) g.SetActive(false);
         enableSprite("WaterSegment");
     }
