@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     public float jumpSpeed, fallMultiplier, jumpMultiplier, highJumpMultiplier;
     public float climbSpeed = 0.05f;
+
+    public float swimSpeed = 1f;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerAction action;

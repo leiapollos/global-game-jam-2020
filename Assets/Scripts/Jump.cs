@@ -26,13 +26,7 @@ public class Jump : PlayerAction
         }
         if (rb.velocity.y <= 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
-            if (player.isGrounded())
-            {
-                Debug.Log("oof");
-                player.action = new Idle(player);
-                player.animator.SetTrigger("Landing");
-            }
+            player.action = new Fall(player);
         }
         else if (!Input.GetButton("Jump"))
             rb.velocity += Vector2.up * Physics2D.gravity.y * (player.jumpMultiplier - 1) * Time.deltaTime;

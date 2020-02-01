@@ -22,10 +22,15 @@ public class Run : PlayerAction
             player.animator.SetBool("Run", false);
         }
         rigidbody.velocity = vel;
-        if(Input.GetAxisRaw("Horizontal") == 0.0f)
+        if (Input.GetAxisRaw("Horizontal") == 0.0f)
         {
             player.action = new Idle(player);
             player.animator.SetBool("Run", false);
+        }
+        if (!player.isGrounded() && rigidbody.velocity.y < 0)
+        {
+            player.animator.SetBool("Run", false);
+            player.action = new Fall(player);
         }
     }
 }
