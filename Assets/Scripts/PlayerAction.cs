@@ -13,5 +13,14 @@ public class PlayerAction
         rigidbody = player.GetComponent<Rigidbody2D>();
     }
 
+    public virtual void OnCollisionEnter(Collision2D col) {
+
+    }
+    public virtual void OnCollisionStay(Collision2D col) {
+        
+    }
+    public virtual void OnCollisionExit(Collision2D col) {
+        
+    }
     public virtual void DoAction() { }
 }
