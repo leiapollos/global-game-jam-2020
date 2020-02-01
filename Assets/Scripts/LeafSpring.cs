@@ -20,7 +20,7 @@ public class LeafSpring : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 direction = transform.up;
+        Vector2 direction = transform.up.normalized;
         var player = collision.gameObject.GetComponent<Player>();
         player.action = new LeafJump(player, direction * bounceForce);
         

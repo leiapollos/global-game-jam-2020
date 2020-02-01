@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public PlayerAction action;
     public Scenery scenery;
     public float RunVelocity = 4.0f;
+    public float maxSpeed = 10.0f;
 
     public bool CanClimb;
 
