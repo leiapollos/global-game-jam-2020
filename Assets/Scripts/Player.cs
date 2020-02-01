@@ -9,19 +9,21 @@ public class Player : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerAction action;
+    public Scenery scenery;
     public float RunVelocity = 4.0f;
 
-    public virtual void OnCollisionEnter2D(Collision2D col)
+    public virtual void OnTriggerEnter2D(Collider2D col)
     {
-        action.OnCollisionEnter(col);
+        Debug.Log(col.name);
+        action.OnTriggerEnter(col);
     }
-    public virtual void OnCollisionStay2D(Collision2D col)
+    public virtual void OnTriggerStay2D(Collider2D col)
     {
-        action.OnCollisionStay(col);
+        action.OnTriggerStay(col);
     }
-    public virtual void OnCollisionExit2D(Collision2D col)
+    public virtual void OnTriggerExit2D(Collider2D col)
     {
-        action.OnCollisionExit(col);
+        action.OnTriggerExit(col);
     }
 
     // Start is called before the first frame update
@@ -49,6 +51,9 @@ public class Player : MonoBehaviour
             ).collider != null;
     }
 
-
+    public void enableScenery(String name)
+    {
+        scenery.enableSprite(name);
+    }
 
 }
