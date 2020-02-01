@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     public float jumpSpeed, fallMultiplier, jumpMultiplier, highJumpMultiplier;
     public float climbSpeed = 0.05f;
+
+    public float swimSpeed = 1f;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerAction action;
@@ -54,6 +56,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 S = spriteRenderer.bounds.size;
+        GetComponent<BoxCollider2D>().size = S;
         action.DoAction();
     }
 
@@ -73,6 +77,11 @@ public class Player : MonoBehaviour
     public void enableScenery(String name)
     {
         scenery.enableSprite(name);
+    }
+
+    public void GoToIdle()
+    {
+        action = new Idle(this);
     }
 
 }

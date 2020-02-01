@@ -33,6 +33,11 @@ public class PlayerAction
             GameObject.Destroy(col.gameObject);
             player.enableScenery("Water");
         }
+        if(col.name == "Water")
+        {
+            player.animator.SetBool("Run", false);
+            player.action = new Swim(player);
+        }
     }
     public virtual void OnTriggerStay(Collider2D col)
     {

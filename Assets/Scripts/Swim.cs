@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Swim : PlayerAction
 {
+    protected float swimFallMultiplier = 0.5f;
     public Swim(Player _player) : base(_player)
     {
         player.animator.SetBool("SurfaceSwim", true);
@@ -13,12 +14,43 @@ public class Swim : PlayerAction
     {
         base.DoAction();
         //swim
-        Vector3 pos = player.transform.position;
-        pos.y -= 0.5f;
-        if (Input.GetKey(KeyCode.Space) == true) pos.y += 1.0f;
-        player.transform.position = pos;
+        player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (swimFallMultiplier) * Time.deltaTime;
+        Vector2 vel = player.GetComponent<Rigidbody2D>().velocity;
+        if (Input.GetButton("Jump"))
+            vel.y = player.swimSpeed;
+        else
+            vel.y = -player.swimSpeed;
         ///
         //HOW DO WE EXIT SWIMMING ACTION? COLLIDER WITH WATER?
         ///
+
+        vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
+        rigidbody.velocity = vel;
+
+        player.GetComponent<Rigidbody2D>().velocity = vel;
     }
+
+    public override void OnTriggerStay(Collider2D col)
+    {
+        if (col.tag == "WaterSurface")
+        {
+            player.animator.SetBool("DeepSwim", false);
+            player.animator.SetBool("SurfaceSwim", true);
+        }
+        else if (col.tag == "Water")
+        {
+            player.animator.SetBool("DeepSwim", true);
+        }
+    }
+
+    public override void OnTriggerExit(Collider2D col)
+    {
+        if (col.tag == "Water")
+        {
+            player.animator.SetBool("DeepSwim", false);
+            player.animator.SetBool("SurfaceSwim", false);
+            player.action = new Idle(player);
+        }
+    }
+
 }
