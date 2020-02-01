@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 151236731}
+  XOffset: 5
+  FollowAmount: 3
 --- !u!1 &151236731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8113581025362680496, guid: 8fd1540af66daa245b91cfa07592527c,
@@ -6108,6 +6110,11 @@ PrefabInstance:
       propertyPath: scenery
       value: 
       objectReference: {fileID: 1009962433}
+    - target: {fileID: 5739276694694197895, guid: 8fd1540af66daa245b91cfa07592527c,
+        type: 3}
+      propertyPath: RunVelocity
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7406797121314549270, guid: 8fd1540af66daa245b91cfa07592527c,
         type: 3}
       propertyPath: m_Constraints

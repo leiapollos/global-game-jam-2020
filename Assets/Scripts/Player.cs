@@ -56,6 +56,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 S = spriteRenderer.bounds.size;
+        GetComponent<BoxCollider2D>().size = S;
         action.DoAction();
     }
 

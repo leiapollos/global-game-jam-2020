@@ -14,6 +14,7 @@ public class Fall : PlayerAction
 
     public override void DoAction()
     {
+        base.DoAction();
         rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
         base.DoAction();
         if (player.isGrounded())
