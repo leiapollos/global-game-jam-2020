@@ -37,15 +37,4 @@ public class Idle : PlayerAction
             Debug.Log("11111");
         }
     }
-
-    public override void OnCollisionStay(Collision2D col)
-    {
-
-    }
-
-    public override void OnCollisionExit(Collision2D col)
-    {
-
-    }
-
 }

@@ -10,23 +10,10 @@ public class Player : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerAction action;
+    public Scenery scenery;
     public float RunVelocity = 4.0f;
 
-
     public bool CanClimb;
-
-    public virtual void OnCollisionEnter2D(Collision2D col)
-    {
-        action.OnCollisionEnter(col);
-    }
-    public virtual void OnCollisionStay2D(Collision2D col)
-    {
-        action.OnCollisionStay(col);
-    }
-    public virtual void OnCollisionExit2D(Collision2D col)
-    {
-        action.OnCollisionExit(col);
-    }
 
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
@@ -43,6 +30,19 @@ public class Player : MonoBehaviour
         if (col.CompareTag("Climbable"))
             CanClimb = false;
         action.OnTriggerExit(col);
+    }
+
+    public virtual void OnCollisionEnter2D(Collision2D col)
+    {
+        action.OnCollisionEnter(col);
+    }
+    public virtual void OnCollisionStay2D(Collision2D col)
+    {
+        action.OnCollisionStay(col);
+    }
+    public virtual void OnCollisionExit2D(Collision2D col)
+    {
+        action.OnCollisionExit(col);
     }
 
     // Start is called before the first frame update
@@ -70,6 +70,9 @@ public class Player : MonoBehaviour
             ).collider != null;
     }
 
-
+    public void enableScenery(String name)
+    {
+        scenery.enableSprite(name);
+    }
 
 }

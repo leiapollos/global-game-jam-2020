@@ -25,9 +25,14 @@ public class PlayerAction
     {
 
     }
+
     public virtual void OnTriggerEnter(Collider2D col)
     {
-
+        if (col.name == "BlueBucket")
+        {
+            GameObject.Destroy(col.gameObject);
+            player.enableScenery("Water");
+        }
     }
     public virtual void OnTriggerStay(Collider2D col)
     {
@@ -37,6 +42,7 @@ public class PlayerAction
     {
 
     }
+
     public virtual void DoAction()
     {
         //Flipping Sprite:
