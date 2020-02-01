@@ -15,7 +15,6 @@ public class Idle : PlayerAction
     {
         base.DoAction();
         //idle
-        player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
         if (Input.GetAxisRaw("Horizontal") != 0.0f)
         {
             player.action = new Run(player);
@@ -27,6 +26,10 @@ public class Idle : PlayerAction
         if (Input.GetAxisRaw("Vertical") > 0 && player.CanClimb)//Climb Test
         {
             player.action = new Climb(player);
+        }
+        if (!player.isGrounded() && rigidbody.velocity.y < 0)
+        {
+            player.action = new Fall(player);
         }
     }
 

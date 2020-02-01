@@ -16,14 +16,13 @@ public class Swim : PlayerAction
         //swim
         player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (swimFallMultiplier) * Time.deltaTime;
         Vector2 vel = player.GetComponent<Rigidbody2D>().velocity;
-        if (Input.GetButton("Jump")) vel.y += 0.8f;
+        if (Input.GetButton("Jump"))
+            vel.y = player.swimSpeed;
+        else
+            vel.y = -player.swimSpeed;
         ///
         //HOW DO WE EXIT SWIMMING ACTION? COLLIDER WITH WATER?
         ///
-        if (vel.y < -1.0f)
-            vel.y = -1.0f; 
-        if (vel.y > 1.0f)
-            vel.y = 1.0f;
 
         vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
         rigidbody.velocity = vel;
@@ -33,12 +32,12 @@ public class Swim : PlayerAction
 
     public override void OnTriggerStay(Collider2D col)
     {
-        if(col.tag == "WaterSurface")
+        if (col.tag == "WaterSurface")
         {
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", true);
         }
-        else if(col.tag == "Water")
+        else if (col.tag == "Water")
         {
             player.animator.SetBool("DeepSwim", true);
         }
@@ -46,7 +45,7 @@ public class Swim : PlayerAction
 
     public override void OnTriggerExit(Collider2D col)
     {
-        if(col.tag == "Water")
+        if (col.tag == "Water")
         {
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", false);

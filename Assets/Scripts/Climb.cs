@@ -10,7 +10,7 @@ public class Climb : PlayerAction
         {
             rigidbody.gravityScale = 1;
             player.animator.SetBool("Climb", false);
-            player.action = new Idle(player);
+            player.action = new Fall(player);
         }
     }
 
@@ -30,7 +30,7 @@ public class Climb : PlayerAction
         {
             rigidbody.gravityScale = 1;
             player.animator.SetBool("Climb", false);
-            player.action = new Idle(player);
+            player.action = new Fall(player);
         }
         else if (player.isGrounded() && Input.GetAxisRaw("Vertical") < 0)
         {
