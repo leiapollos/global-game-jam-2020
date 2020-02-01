@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
             Vector2.down,
             0.1f,
             ~LayerMask.GetMask("Player")
-            ).collider;
+            ).collider != null;
     }
+
+
+
 }

@@ -28,4 +28,23 @@ public class Idle : PlayerAction
         }
         player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
     }
+
+    public override void OnCollisionEnter(Collision2D col)
+    {
+        if(col.collider.name == "BlueBucket")
+        {
+            Debug.Log("11111");
+        }
+    }
+
+    public override void OnCollisionStay(Collision2D col)
+    {
+
+    }
+
+    public override void OnCollisionExit(Collision2D col)
+    {
+
+    }
+
 }

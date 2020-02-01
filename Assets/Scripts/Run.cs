@@ -27,6 +27,5 @@ public class Run : PlayerAction
             player.action = new Idle(player);
             player.animator.SetBool("Run", false);
         }
-
     }
 }
