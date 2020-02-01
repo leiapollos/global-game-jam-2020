@@ -8,6 +8,7 @@ public class Swim : PlayerAction
     public Swim(Player _player) : base(_player)
     {
         player.animator.SetBool("SurfaceSwim", true);
+        player.adaptCollider = true;
     }
 
     public override void DoAction()
@@ -56,6 +57,7 @@ public class Swim : PlayerAction
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", false);
             player.action = new Idle(player);
+            player.adaptCollider = false;
         }
     }
 
