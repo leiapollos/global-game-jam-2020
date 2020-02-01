@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        action = new Jump(this);
+        action = new Idle(this);
     }
 
     // Update is called once per frame

@@ -12,5 +12,9 @@ public class Swim : PlayerAction
     {
         base.DoAction();
         //swim
+        Vector3 pos = player.transform.position;
+        pos.y -= 0.5f;
+        if (Input.GetKey(KeyCode.Space) == true) pos.y += 1.0f;
+        player.transform.position = pos;
     }
 }
