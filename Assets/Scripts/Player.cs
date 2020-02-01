@@ -77,4 +77,9 @@ public class Player : MonoBehaviour
         scenery.enableSprite(name);
     }
 
+    public void GoToIdle()
+    {
+        action = new Idle(this);
+    }
+
 }

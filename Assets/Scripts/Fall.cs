@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Fall : PlayerAction
 {
+    bool hasLanded;
 
     public Fall(Player _player) : base(_player)
     {
@@ -13,15 +14,21 @@ public class Fall : PlayerAction
 
     public override void DoAction()
     {
-        base.DoAction();
         rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
-        Vector3 vel = rigidbody.velocity;
-        vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
-        rigidbody.velocity = vel;
+        base.DoAction();
         if (player.isGrounded())
         {
-            player.action = new Idle(player);
-            player.animator.SetTrigger("Landing");
+            if (!hasLanded)
+            {
+                player.animator.SetTrigger("Landing");
+                hasLanded = true;
+            }
+        }
+        else
+        {
+            Vector3 vel = rigidbody.velocity;
+            vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
+            rigidbody.velocity = vel;
         }
     }
 }
