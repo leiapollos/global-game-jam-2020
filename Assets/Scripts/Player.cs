@@ -6,10 +6,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float jumpSpeed, fallMultiplier, jumpMultiplier, highJumpMultiplier;
+    public float climbSpeed = 0.05f;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerAction action;
     public float RunVelocity = 4.0f;
+
+
+    public bool CanClimb;
 
     public virtual void OnCollisionEnter2D(Collision2D col)
     {
@@ -22,6 +26,23 @@ public class Player : MonoBehaviour
     public virtual void OnCollisionExit2D(Collision2D col)
     {
         action.OnCollisionExit(col);
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Climbable"))
+            CanClimb = true;
+        action.OnTriggerEnter(col);
+    }
+    public virtual void OnTriggerStay2D(Collider2D col)
+    {
+        action.OnTriggerStay(col);
+    }
+    public virtual void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Climbable"))
+            CanClimb = false;
+        action.OnTriggerExit(col);
     }
 
     // Start is called before the first frame update
@@ -45,7 +66,7 @@ public class Player : MonoBehaviour
             0,
             Vector2.down,
             0.1f,
-            ~LayerMask.GetMask("Player")
+            ~LayerMask.GetMask("Player", "Climbable")
             ).collider != null;
     }
 

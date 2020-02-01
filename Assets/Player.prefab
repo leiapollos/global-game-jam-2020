@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1149972855
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cbe851ac4022e3f41aa40e99f70d4bde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,9 +147,11 @@ MonoBehaviour:
   fallMultiplier: 10
   jumpMultiplier: 8
   highJumpMultiplier: 4
+  climbSpeed: 3
   animator: {fileID: 7144291132011785085}
   spriteRenderer: {fileID: 8885891765686943931}
   RunVelocity: 4
+  CanClimb: 0
 --- !u!95 &7144291132011785085
 Animator:
   serializedVersion: 3

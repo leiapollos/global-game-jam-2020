@@ -13,18 +13,34 @@ public class PlayerAction
         rigidbody = player.GetComponent<Rigidbody2D>();
     }
 
-    public virtual void OnCollisionEnter(Collision2D col) {
+    public virtual void OnCollisionEnter(Collision2D col)
+    {
 
     }
-    public virtual void OnCollisionStay(Collision2D col) {
-        
+    public virtual void OnCollisionStay(Collision2D col)
+    {
+
     }
-    public virtual void OnCollisionExit(Collision2D col) {
-        
+    public virtual void OnCollisionExit(Collision2D col)
+    {
+
     }
-    public virtual void DoAction() {
+    public virtual void OnTriggerEnter(Collider2D col)
+    {
+
+    }
+    public virtual void OnTriggerStay(Collider2D col)
+    {
+
+    }
+    public virtual void OnTriggerExit(Collider2D col)
+    {
+
+    }
+    public virtual void DoAction()
+    {
         //Flipping Sprite:
         if (player.spriteRenderer.flipX && rigidbody.velocity.x > player.RunVelocity - 1) player.spriteRenderer.flipX = false;
-        else if (!player.spriteRenderer.flipX && rigidbody.velocity.x < - (player.RunVelocity - 1)) player.spriteRenderer.flipX = true;
+        else if (!player.spriteRenderer.flipX && rigidbody.velocity.x < -(player.RunVelocity - 1)) player.spriteRenderer.flipX = true;
     }
 }
