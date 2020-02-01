@@ -7,6 +7,7 @@ public class Swim : PlayerAction
     protected float swimFallMultiplier = 0.5f;
     public Swim(Player _player) : base(_player)
     {
+        sound.PlayLoop(sound.SurfaceSwim);
         player.animator.SetBool("SurfaceSwim", true);
     }
 
@@ -40,11 +41,13 @@ public class Swim : PlayerAction
     {
         if (col.tag == "WaterSurface")
         {
+            sound.PlayLoop(sound.SurfaceSwim);
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", true);
         }
         else if (col.tag == "Water")
         {
+            sound.PlayLoop(sound.SurfaceSwim);
             player.animator.SetBool("DeepSwim", true);
         }
     }
@@ -53,6 +56,7 @@ public class Swim : PlayerAction
     {
         if (col.tag == "Water")
         {
+            sound.StopLoop();
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", false);
             player.action = new Idle(player);

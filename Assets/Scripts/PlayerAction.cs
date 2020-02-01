@@ -6,10 +6,12 @@ public class PlayerAction
 {
     protected Player player;
     protected Rigidbody2D rigidbody;
+    protected PlayerAudio sound;
 
     public PlayerAction(Player _player)
     {
         player = _player;
+        sound = player.sound;
         rigidbody = player.GetComponent<Rigidbody2D>();
     }
 
@@ -33,7 +35,7 @@ public class PlayerAction
             GameObject.Destroy(col.gameObject);
             player.scenery.enableWater();
         }
-        if(col.name == "Water")
+        if (col.name == "Water")
         {
             player.animator.SetBool("Run", false);
             player.action = new Swim(player);

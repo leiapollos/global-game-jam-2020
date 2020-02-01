@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     public bool CanClimb;
 
+    public PlayerAudio sound;
+
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Climbable"))
@@ -53,6 +55,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         action = new Idle(this);
+        sound.SetSources(this);
     }
 
     // Update is called once per frame

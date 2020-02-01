@@ -148,11 +148,39 @@ MonoBehaviour:
   jumpMultiplier: 8
   highJumpMultiplier: 4
   climbSpeed: 3
+  SpringForce: 1
+  swimSpeed: 1.5
+  adaptCollider: 1
   animator: {fileID: 7144291132011785085}
   spriteRenderer: {fileID: 8885891765686943931}
   scenery: {fileID: 0}
-  RunVelocity: 4
+  RunVelocity: 8
   CanClimb: 0
+  sound:
+    Running:
+      clip: {fileID: 8300000, guid: 9d2048af166154c4099469fecbfc6184, type: 3}
+      volume: 1
+    SurfaceSwim:
+      clip: {fileID: 8300000, guid: 4466d8dbe711dc74f8c7c0ce849d296e, type: 3}
+      volume: 1
+    DeepSwim:
+      clip: {fileID: 8300000, guid: b53823b7d10c3a54d92ec597828cf124, type: 3}
+      volume: 1
+    Jumping:
+      clip: {fileID: 8300000, guid: 7a29216a690fb104ba74660edbf08129, type: 3}
+      volume: 1
+    ImpactAfterFallSky:
+      clip: {fileID: 8300000, guid: dd380e8181bc8e34683580a707890428, type: 3}
+      volume: 1
+    FallingFromSky:
+      clip: {fileID: 8300000, guid: 2b1820eee609ce2498f4001e63fe22f6, type: 3}
+      volume: 1
+    Idle:
+      clip: {fileID: 8300000, guid: ced70f57ef4eb7147bce8359f6dbd325, type: 3}
+      volume: 1
+    Climbing:
+      clip: {fileID: 8300000, guid: 0bf7d6b60d5e27f408b206540d0d73bb, type: 3}
+      volume: 1
 --- !u!95 &7144291132011785085
 Animator:
   serializedVersion: 3
