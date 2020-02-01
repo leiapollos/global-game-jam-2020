@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float jumpSpeed, fallMultiplier, jumpMultiplier;
 
     public PlayerAction action;
-    public float RunVelocity = 0.8f;
+    public float RunVelocity = 4.0f;
     // Start is called before the first frame update
     void Start()
     {
