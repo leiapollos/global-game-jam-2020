@@ -27,6 +27,15 @@ public class Swim : PlayerAction
         player.GetComponent<Rigidbody2D>().velocity = vel;
     }
 
+    public override void OnTriggerEnter(Collider2D col)
+    {
+        if (col.tag == "WaterSurface")
+        {
+            player.animator.SetBool("DeepSwim", false);
+            player.animator.SetBool("SurfaceSwim", true);
+        }
+    }
+
     public override void OnTriggerStay(Collider2D col)
     {
         if (col.tag == "WaterSurface")

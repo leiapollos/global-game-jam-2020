@@ -10,7 +10,7 @@ public class Climb : PlayerAction
         {
             rigidbody.gravityScale = 1;
             player.animator.SetBool("Climb", false);
-            player.action = new Fall(player);
+            player.action = new Jump(player);
         }
     }
 
