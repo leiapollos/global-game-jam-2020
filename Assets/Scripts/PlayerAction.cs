@@ -23,6 +23,8 @@ public class PlayerAction
         
     }
     public virtual void DoAction() {
-        player.spriteRenderer.flipX = rigidbody.velocity.x < 0.1;
+        //Flipping Sprite:
+        if (player.spriteRenderer.flipX && rigidbody.velocity.x > player.RunVelocity - 1) player.spriteRenderer.flipX = false;
+        else if (!player.spriteRenderer.flipX && rigidbody.velocity.x < - (player.RunVelocity - 1)) player.spriteRenderer.flipX = true;
     }
 }
