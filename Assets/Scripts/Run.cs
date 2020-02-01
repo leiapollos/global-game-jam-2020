@@ -14,14 +14,7 @@ public class Run : PlayerAction
         //run
 
         Vector3 vel = rigidbody.velocity;
-        if (Input.GetAxisRaw("Horizontal") > 0.0f)
-        {
-            vel.x = player.RunVelocity;
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0.0f)
-        {
-            vel.x = - player.RunVelocity;
-        }
+        vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
         if (Input.GetButton("Jump"))
         {
             player.action = new Jump(player);

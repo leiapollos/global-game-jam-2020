@@ -49,5 +49,8 @@ public class Jump : PlayerAction
             rb.velocity += Vector2.up * Physics2D.gravity.y * (player.jumpMultiplier - 1) * Time.deltaTime;
         else
             rb.velocity += Vector2.up * Physics2D.gravity.y * (player.highJumpMultiplier - 1) * Time.deltaTime;
+        Vector3 vel = rigidbody.velocity;
+        vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
+        rigidbody.velocity = vel;
     }
 }
