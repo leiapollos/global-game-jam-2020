@@ -20,9 +20,6 @@ public class Swim : PlayerAction
             vel.y = player.swimSpeed;
         else
             vel.y = -player.swimSpeed;
-        ///
-        //HOW DO WE EXIT SWIMMING ACTION? COLLIDER WITH WATER?
-        ///
 
         vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
         rigidbody.velocity = vel;
