@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float jumpSpeed, fallMultiplier, jumpMultiplier;
+
     public PlayerAction action;
     public float RunVelocity = 0.8f;
     // Start is called before the first frame update

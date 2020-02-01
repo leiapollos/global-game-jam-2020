@@ -17,5 +17,10 @@ public class Idle : PlayerAction
         else if (Input.GetAxisRaw("Horizontal") < 0.0f){
             player.action = new RunLeft(player);
         }
+        if (Input.GetButtonDown("Jump"))
+        {
+            player.action = new Jump(player);
+        }
+        player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
     }
 }
