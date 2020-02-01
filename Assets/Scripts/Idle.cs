@@ -6,16 +6,16 @@ public class Idle : PlayerAction
 {
     public Idle(Player _player) : base(_player)
     {
+        Vector2 vel = rigidbody.velocity;
+        vel.x = 0.0f;
+        rigidbody.velocity = vel;
     }
 
     public override void DoAction()
     {
         //idle
-        if (Input.GetAxisRaw("Horizontal")>0.0f) {
-            player.action = new RunRight(player);
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0.0f){
-            player.action = new RunLeft(player);
+        if (Input.GetAxisRaw("Horizontal")!=0.0f) {
+            player.action = new Run(player);
         }
         if (Input.GetButtonDown("Jump"))
         {
