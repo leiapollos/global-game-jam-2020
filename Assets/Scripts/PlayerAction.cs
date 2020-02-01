@@ -33,7 +33,7 @@ public class PlayerAction
             GameObject.Destroy(col.gameObject);
             player.scenery.enableWater();
         }
-        if(col.name == "Water")
+        if(col.tag == "Water")
         {
             player.animator.SetBool("Run", false);
             player.action = new Swim(player);
