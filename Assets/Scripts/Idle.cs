@@ -11,6 +11,10 @@ public class Idle : PlayerAction
     public override void DoAction()
     {
         base.DoAction();
-        //idle
+        if (Input.GetButtonDown("Jump"))
+        {
+            player.action = new Jump(player);
+        }
+        player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (player.fallMultiplier - 1) * Time.deltaTime;
     }
 }

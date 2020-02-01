@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    PlayerAction action;
+    public float jumpSpeed, fallMultiplier, jumpMultiplier;
+
+    public PlayerAction action;
     // Start is called before the first frame update
     void Start()
     {
-        action = new Jump(this);
+        action = new Idle(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        action.DoAction();
     }
 }
