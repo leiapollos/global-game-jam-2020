@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float SpringForce = 1f;
 
     public float swimSpeed = 1.5f;
+    public bool adaptCollider = true;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerAction action;
@@ -57,9 +58,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 S = spriteRenderer.bounds.size;
-        GetComponent<BoxCollider2D>().size = S;
-        GetComponent<BoxCollider2D>().offset = spriteRenderer.bounds.min + spriteRenderer.bounds.extents - transform.position;
+        if (adaptCollider)
+        {
+            Vector2 S = spriteRenderer.bounds.size;
+            GetComponent<BoxCollider2D>().size = S;
+            GetComponent<BoxCollider2D>().offset = spriteRenderer.bounds.min + spriteRenderer.bounds.extents - transform.position;
+        }
         action.DoAction();
     }
 
