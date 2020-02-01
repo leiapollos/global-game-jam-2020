@@ -560,7 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437429154}
   - component: {fileID: 437429155}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaterSurface
   m_TagString: WaterSurface
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 441303683}
   - component: {fileID: 441303684}
   - component: {fileID: 441303685}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Water
   m_TagString: Water
   m_Icon: {fileID: 0}
