@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Run : PlayerAction
+public class RunRight : PlayerAction
 {
-    public Run(Player _player) : base(_player)
+    public RunRight(Player _player) : base(_player)
     {
 
     }

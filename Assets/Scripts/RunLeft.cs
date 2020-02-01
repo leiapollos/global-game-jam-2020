@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Run : PlayerAction
+public class RunLeft : PlayerAction
 {
-    public Run(Player _player) : base(_player)
+    public RunLeft(Player _player) : base(_player)
     {
 
     }
@@ -13,7 +13,7 @@ public class Run : PlayerAction
     {
         //run
         Vector3 vel = rigidbody.velocity;
-        vel.x = player.RunVelocity;
+        vel.x = - player.RunVelocity;
         rigidbody.velocity = vel;
         player.action = new Idle(player);
     }

@@ -10,7 +10,12 @@ public class Idle : PlayerAction
 
     public override void DoAction()
     {
-        base.DoAction();
         //idle
+        if (Input.GetAxisRaw("Horizontal")>0.0f) {
+            player.action = new RunRight(player);
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0.0f){
+            player.action = new RunLeft(player);
+        }
     }
 }
