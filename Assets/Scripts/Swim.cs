@@ -8,7 +8,6 @@ public class Swim : PlayerAction
     public Swim(Player _player) : base(_player)
     {
         player.animator.SetBool("SurfaceSwim", true);
-        Debug.Log("444444444");
     }
 
     public override void DoAction()
@@ -34,17 +33,23 @@ public class Swim : PlayerAction
 
     public override void OnTriggerStay(Collider2D col)
     {
-        if(col.name == "WaterSurface")
+        if(col.tag == "WaterSurface")
         {
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", true);
         }
-        else if(col.name == "Water")
+        else if(col.tag == "Water")
         {
             player.animator.SetBool("DeepSwim", true);
         }
-        else
+    }
+
+    public override void OnTriggerExit(Collider2D col)
+    {
+        if(col.tag == "Water")
         {
+            player.animator.SetBool("DeepSwim", false);
+            player.animator.SetBool("SurfaceSwim", false);
             player.action = new Idle(player);
         }
     }
