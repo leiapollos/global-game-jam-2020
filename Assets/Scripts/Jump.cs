@@ -23,7 +23,9 @@ public class Jump : PlayerAction
         base.DoAction();
         if (!hasJumped)
         {
-            rb.velocity = Vector2.up * player.jumpSpeed;
+            Vector2 jumpVel = Vector2.up * player.jumpSpeed;
+            jumpVel.x = rigidbody.velocity.x;
+            rb.velocity = jumpVel;
             hasJumped = true;
         }
         if (rb.velocity.y <= 0)
