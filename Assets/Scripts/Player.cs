@@ -59,20 +59,32 @@ public class Player : MonoBehaviour
     {
         Vector2 S = spriteRenderer.bounds.size;
         GetComponent<BoxCollider2D>().size = S;
+        GetComponent<BoxCollider2D>().offset = spriteRenderer.bounds.min + spriteRenderer.bounds.extents - transform.position;
         action.DoAction();
     }
 
     public bool isGrounded()
     {
+        string[] ignoreLayers = { "Water", "Player", "Climbable" };
         var bounds = this.GetComponent<SpriteRenderer>().bounds;
-        return Physics2D.BoxCast(
+        var collider = Physics2D.BoxCast(
             new Vector2(bounds.min.x + bounds.extents.x, bounds.min.y),
-            new Vector2(bounds.extents.x, 0.1f),
+            new Vector2(bounds.extents.x, 0.001f),
             0,
             Vector2.down,
             0.1f,
-            ~LayerMask.GetMask("Player", "Climbable")
-            ).collider != null;
+            ~LayerMask.GetMask(ignoreLayers)
+            ).collider;
+        bool hit = false;
+        if (collider != null)
+        {
+            hit = true;
+            for (int i = 0; hit && i < ignoreLayers.Length; i++)
+            {
+                hit = hit && LayerMask.LayerToName(collider.gameObject.layer) != ignoreLayers[i];
+            }
+        }
+        return hit;
     }
 
     public void enableScenery(String name)

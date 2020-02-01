@@ -16,8 +16,9 @@ public class Run : PlayerAction
 
         Vector3 vel = rigidbody.velocity;
         vel.x = player.RunVelocity * Input.GetAxisRaw("Horizontal");
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") && player.isGrounded())
         {
+            player.isGrounded();
             player.action = new Jump(player);
             player.animator.SetBool("Run", false);
         }
