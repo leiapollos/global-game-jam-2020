@@ -28,7 +28,7 @@ public class CurrentForce : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>();
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-
+          
             rb.gravityScale = 0;
 
             Debug.Log("oof");
