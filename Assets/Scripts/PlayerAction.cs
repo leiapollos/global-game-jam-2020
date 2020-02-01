@@ -17,7 +17,7 @@ public class PlayerAction
         if (col.name == "BlueBucket")
         {
             GameObject.Destroy(col.gameObject);
-            player.enableScenery("water");
+            player.enableScenery("Water");
         }
     }
     public virtual void OnTriggerStay(Collider2D col) {
