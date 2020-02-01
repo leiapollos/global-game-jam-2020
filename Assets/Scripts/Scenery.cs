@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Scenery : MonoBehaviour
 {
-    public List<SpriteRenderer> sprites;
+    public List<GameObject> sprites;
+    public GameObject solidFloorWater;
     
     public void enableSprite(string name)
     {
-        foreach(SpriteRenderer s in sprites)
+        foreach(GameObject s in sprites)
         {
-            if(s.name == name)
+            if(s.tag == name)
             {
-                s.enabled = true;
+                s.SetActive(true);
             }
         }
+    }
+
+    public void enableWater()
+    {
+        Destroy(solidFloorWater);
+        enableSprite("Water");
+        enableSprite("WaterSurface");
     }
 
 }

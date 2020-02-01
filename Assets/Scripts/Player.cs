@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float climbSpeed = 0.05f;
     public float SpringForce = 1f;
 
-    public float swimSpeed = 1f;
+    public float swimSpeed = 1.5f;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public PlayerAction action;

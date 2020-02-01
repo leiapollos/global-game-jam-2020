@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
-    public float XOffset = 5;
+    public float XOffset = 2.5f;
     public float FollowAmount = 0.1f;
     // Start is called before the first frame update
     void Start()

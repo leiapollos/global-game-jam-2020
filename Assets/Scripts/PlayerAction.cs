@@ -31,7 +31,7 @@ public class PlayerAction
         if (col.name == "BlueBucket")
         {
             GameObject.Destroy(col.gameObject);
-            player.enableScenery("Water");
+            player.scenery.enableWater();
         }
         if(col.name == "Water")
         {
