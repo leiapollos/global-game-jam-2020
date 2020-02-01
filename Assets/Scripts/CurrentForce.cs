@@ -28,7 +28,11 @@ public class CurrentForce : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>();
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-          
+            player.adaptCollider = false;
+            player.GetComponent<BoxCollider2D>().enabled = false;
+            player.GetComponent<CircleCollider2D>().enabled = true;
+
+
             rb.gravityScale = 0;
 
             Debug.Log("oof");
