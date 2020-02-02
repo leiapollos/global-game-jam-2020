@@ -9132,12 +9132,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1258052606 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4258722678781900135, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 303271494}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1297753244
 GameObject:
   m_ObjectHideFlags: 0
@@ -9811,7 +9805,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2104810476}
-  - {fileID: 1258052606}
   - {fileID: 889982079}
   - {fileID: 386103027}
   m_Father: {fileID: 0}
@@ -10745,7 +10738,7 @@ PrefabInstance:
     - target: {fileID: 4258722678781900135, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4258722678781900135, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
         type: 3}
@@ -11064,7 +11057,7 @@ PrefabInstance:
     - target: {fileID: 4258722678781900135, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4258722678781900135, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
         type: 3}
@@ -12109,12 +12102,22 @@ PrefabInstance:
     - target: {fileID: 4258722678781900134, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
         type: 3}
       propertyPath: m_Offset.y
-      value: -2.6828713
+      value: -2.7213802
       objectReference: {fileID: 0}
     - target: {fileID: 4258722678781900134, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.8046279
+      value: 0.8816457
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258722678781900134, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 10.503971
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258722678781900134, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 40.16794
       objectReference: {fileID: 0}
     - target: {fileID: 4258722678781900134, guid: 87a03924d80b25c47ae8113f1a7a2d3f,
         type: 3}

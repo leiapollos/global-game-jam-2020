@@ -8,6 +8,7 @@ public class Climb : PlayerAction
     {
         if (col.CompareTag("Climbable"))
         {
+            sound.StopLoop();
             rigidbody.gravityScale = 1;
             player.animator.SetBool("Climb", false);
             player.action = new Jump(player);
@@ -27,12 +28,12 @@ public class Climb : PlayerAction
     {
         base.DoAction();
         //climb
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             rigidbody.gravityScale = 1;
             player.animator.SetBool("Climb", false);
             sound.StopLoop();
-            player.action = new Fall(player);
+            player.action = new Jump(player);
         }
         else if (player.isGrounded() && Input.GetAxisRaw("Vertical") < 0)
         {
@@ -48,6 +49,7 @@ public class Climb : PlayerAction
         }
         else
         {
+            sound.StopLoop();
             player.action = new ClimbIdle(player);
         }
     }
