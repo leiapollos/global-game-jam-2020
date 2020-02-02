@@ -130,4 +130,19 @@ public class Player : MonoBehaviour
         this.scenery.enableWater();
     }
 
+    void PlayBlue()
+    {
+        sound.PlayOnce(sound.GetBlue);
+    }
+
+    void PlayGreen()
+    {
+        sound.PlayOnce(sound.GetGreen);
+    }
+
+    void PlayRed()
+    {
+        sound.PlayOnce(sound.GetRed);
+    }
+
 }

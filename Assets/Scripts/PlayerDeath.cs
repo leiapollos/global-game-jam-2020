@@ -7,9 +7,9 @@ public class PlayerDeath : MonoBehaviour
 {
 
 
-   public void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"));
-        SceneManager.LoadScene("InitialLevelProto");
+        if (col.CompareTag("Player"))
+            SceneManager.LoadScene("InitialLevelProto");
     }
 }
