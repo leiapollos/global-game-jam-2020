@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Swim : PlayerAction
 {
+    bool surface;
     protected float swimFallMultiplier = 0.5f;
     public Swim(Player _player) : base(_player)
     {
+        sound.PlayLoop(sound.SurfaceSwim);
         player.animator.SetBool("SurfaceSwim", true);
         player.adaptCollider = true;
     }
@@ -14,6 +16,10 @@ public class Swim : PlayerAction
     public override void DoAction()
     {
         base.DoAction();
+        if (surface)
+            sound.PlayLoop(sound.SurfaceSwim);
+        else
+            sound.PlayLoop(sound.DeepSwim);
         //swim
         player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (swimFallMultiplier) * Time.deltaTime;
         Vector2 vel = player.GetComponent<Rigidbody2D>().velocity;
@@ -32,6 +38,7 @@ public class Swim : PlayerAction
     {
         if (col.tag == "WaterSurface")
         {
+            surface = true;
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", true);
         }
@@ -54,10 +61,15 @@ public class Swim : PlayerAction
     {
         if (col.tag == "Water")
         {
+            sound.StopLoop();
             player.animator.SetBool("DeepSwim", false);
             player.animator.SetBool("SurfaceSwim", false);
             player.action = new Idle(player);
             player.adaptCollider = false;
+        }
+        else if (col.tag == "WaterSurface")
+        {
+            surface = false;
         }
     }
 
