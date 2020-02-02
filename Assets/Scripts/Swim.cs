@@ -5,6 +5,7 @@ using UnityEngine;
 public class Swim : PlayerAction
 {
     bool surface;
+    bool surfacePrev;
     protected float swimFallMultiplier = 0.5f;
     public Swim(Player _player) : base(_player)
     {
@@ -16,12 +17,16 @@ public class Swim : PlayerAction
     public override void DoAction()
     {
         base.DoAction();
-        if (surface)
-            sound.PlayLoop(sound.SurfaceSwim);
-        else
-            sound.PlayLoop(sound.DeepSwim);
+        if (surface != surfacePrev)
+        {
+            if (surface)
+                sound.PlayLoop(sound.SurfaceSwim);
+            else
+                sound.PlayLoop(sound.DeepSwim);
+        }
+        surfacePrev = surface;
         //swim
-        player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (swimFallMultiplier) * Time.deltaTime;
+        //player.GetComponent<Rigidbody2D>().velocity += Vector2.up * Physics2D.gravity.y * (swimFallMultiplier) * Time.deltaTime;
         Vector2 vel = player.GetComponent<Rigidbody2D>().velocity;
         if (Input.GetButton("Jump"))
             vel.y = player.swimSpeed;
