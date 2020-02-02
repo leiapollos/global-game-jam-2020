@@ -305,6 +305,12 @@ MonoBehaviour:
     BlinkSound:
       clip: {fileID: 8300000, guid: d03e6fe6b8a59314aa29647f1817b708, type: 3}
       volume: 1
+    EndSong:
+      clip: {fileID: 8300000, guid: 7cc3614310711104a9080eb0aa16d37a, type: 3}
+      volume: 1
+    Die:
+      clip: {fileID: 8300000, guid: 18b30142a7b3ebb44bf0fe9cdaaf0a89, type: 3}
+      volume: 1
   eyes: {fileID: 0}
 --- !u!95 &7144291132011785085
 Animator:

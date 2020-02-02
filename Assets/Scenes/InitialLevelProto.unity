@@ -11489,9 +11489,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1429244290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd160fd78a92b247870c7c302ff8403, type: 3}
+  m_Script: {fileID: 11500000, guid: 14ef02cf142fa2f49b0a63a6ccf0c9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaitTime: 3
 --- !u!61 &1429244293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11834,11 +11835,6 @@ PrefabInstance:
       propertyPath: startAction
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5739276694694197895, guid: 8fd1540af66daa245b91cfa07592527c,
-        type: 3}
-      propertyPath: sound.EndSong.clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7cc3614310711104a9080eb0aa16d37a, type: 3}
     - target: {fileID: 7406797121314549270, guid: 8fd1540af66daa245b91cfa07592527c,
         type: 3}
       propertyPath: m_Constraints
