@@ -1253,9 +1253,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1354542874}
-        m_MethodName: LoadCreditsScene
-        m_Mode: 3
+      - m_Target: {fileID: 925615706}
+        m_MethodName: RickRoll
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1634,9 +1634,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1354542874}
-        m_MethodName: LoadHelpScene
-        m_Mode: 3
+      - m_Target: {fileID: 925615706}
+        m_MethodName: RickRoll
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

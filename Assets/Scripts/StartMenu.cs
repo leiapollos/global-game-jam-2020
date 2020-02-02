@@ -13,9 +13,15 @@ public class StartMenu : MonoBehaviour
         btn.onClick.AddListener(TaskOnClick);
     }
 
-    void TaskOnClick()
+    public void TaskOnClick()
     {
         Debug.Log("You have clicked the button!");
+    }
+
+    public void RickRoll()
+    {
+        Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        Debug.Log("hegsbxtnsrdjthge");
     }
 
     // Update is called once per frame
