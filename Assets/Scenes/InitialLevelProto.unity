@@ -2588,6 +2588,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &601305585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3502828041147047230, guid: 7c798959c1e5f5748ac42260baf4b524,
+    type: 3}
+  m_PrefabInstance: {fileID: 2519242052974354438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &633464789
 GameObject:
   m_ObjectHideFlags: 0
@@ -13540,6 +13546,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1009962432}
     m_Modifications:
+    - target: {fileID: 1764420616669349538, guid: 7c798959c1e5f5748ac42260baf4b524,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764420616669349538, guid: 7c798959c1e5f5748ac42260baf4b524,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2519242053371208868, guid: 7c798959c1e5f5748ac42260baf4b524,
         type: 3}
       propertyPath: m_Name
@@ -13600,6 +13616,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5663750073541280164, guid: 7c798959c1e5f5748ac42260baf4b524,
+        type: 3}
+      propertyPath: heart
+      value: 
+      objectReference: {fileID: 601305585}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c798959c1e5f5748ac42260baf4b524, type: 3}
 --- !u!1001 &4258722677725775200
