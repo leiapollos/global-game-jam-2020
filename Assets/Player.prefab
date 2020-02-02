@@ -249,8 +249,8 @@ MonoBehaviour:
   highJumpMultiplier: 4
   climbSpeed: 3
   SpringForce: 1500
-  swimSpeed: 1
-  adaptCollider: 1
+  swimSpeed: 3.5
+  adaptCollider: 0
   animator: {fileID: 7144291132011785085}
   spriteRenderer: {fileID: 8885891765686943931}
   scenery: {fileID: 0}
