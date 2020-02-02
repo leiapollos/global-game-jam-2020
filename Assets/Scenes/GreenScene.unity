@@ -3625,7 +3625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1802713653}
   XOffset: 5
-  YOffset: 2.5
+  YOffset: 0
   FollowAmount: 3
 --- !u!81 &1932828312
 AudioListener:
@@ -3662,7 +3662,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
