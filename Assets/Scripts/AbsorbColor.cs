@@ -11,7 +11,6 @@ public class AbsorbColor : PlayerAction
         player.animator.SetBool("SurfaceSwim", false);
         player.animator.SetBool("Climb", false);
         player.animator.SetBool("ClimbIdle", false);
-        player.animator.SetTrigger("AbsorbColor");
     }
 
     public override void DoAction()

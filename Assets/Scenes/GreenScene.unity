@@ -21357,7 +21357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1802713653}
   XOffset: 5
-  YOffset: 2.5
+  YOffset: 0
   FollowAmount: 3
 --- !u!81 &1932828312
 AudioListener:
