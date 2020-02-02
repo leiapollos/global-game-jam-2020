@@ -260,6 +260,7 @@ MonoBehaviour:
   maxBreathInterval: 10
   CanClimb: 0
   sound:
+    FadeTime: 1
     Running:
       clip: {fileID: 8300000, guid: 9d2048af166154c4099469fecbfc6184, type: 3}
       volume: 1
