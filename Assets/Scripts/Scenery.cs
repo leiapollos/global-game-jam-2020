@@ -29,6 +29,6 @@ public class Scenery : MonoBehaviour
     public void enableGreen()
     {
         foreach (GameObject g in solidGreen) g.SetActive(false);
-        enableSprite("Climbable");
+        enableSprite("GreenNew");
     }
 }

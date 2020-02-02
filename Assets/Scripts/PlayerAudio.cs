@@ -35,6 +35,7 @@ public class PlayerAudio
     public AudioClipVolume GetBlue;
     public AudioClipVolume GetGreen;
     public AudioClipVolume GetRed;
+    public AudioClipVolume BlinkSound;
 
     public void SetSources(Player player)
     {

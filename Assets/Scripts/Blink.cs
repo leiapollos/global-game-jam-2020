@@ -9,9 +9,11 @@ public class Blink : MonoBehaviour
     public float BlinkTime = 0.2f;
     private float t, nextT;
     private SpriteRenderer spr;
+    private PlayerAudio sound;
     // Start is called before the first frame update
     void Start()
     {
+        sound = transform.parent.GetComponent<Player>().sound;
         spr = GetComponent<SpriteRenderer>();
         t = 0;
         nextT = Random.Range(MinInterval, MaxInterval);
@@ -25,6 +27,8 @@ public class Blink : MonoBehaviour
         {
             t = 0;
             nextT = Random.Range(MinInterval, MaxInterval);
+            if (spr.enabled)
+                sound.PlayOnce(sound.BlinkSound);
             StartCoroutine(Close());
         }
     }
