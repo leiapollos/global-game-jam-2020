@@ -6,6 +6,7 @@ public class Scenery : MonoBehaviour
 {
     public List<GameObject> sprites;
     public List<GameObject> solidFloorWater;
+    public List<GameObject> solidGreen;
 
     public void enableSprite(string name)
     {
@@ -25,4 +26,9 @@ public class Scenery : MonoBehaviour
         enableSprite("WaterSegment");
     }
 
+    public void enableGreen()
+    {
+        foreach (GameObject g in solidGreen) g.SetActive(false);
+        enableSprite("Climbable");
+    }
 }

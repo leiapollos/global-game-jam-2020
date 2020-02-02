@@ -10,6 +10,7 @@ public class PickApple : MonoBehaviour
         if (col.tag == "Player")
         {
             var player = col.gameObject.GetComponent<Player>();
+            player.scenery.enableGreen();
             player.action = new AbsorbColor(player);
             player.animator.SetTrigger("PickApple");
             player.transform.position = new Vector3(130.4f, -10.16f, 0);
