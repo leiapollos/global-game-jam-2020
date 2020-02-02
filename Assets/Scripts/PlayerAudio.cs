@@ -50,5 +50,6 @@ public struct PlayerAudio
     public void StopLoop()
     {
         loopSource.Stop();
+        loopSource.clip = null;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scenery : MonoBehaviour
 {
     public List<GameObject> sprites;
-    public GameObject solidFloorWater;
+    public List<GameObject> solidFloorWater;
     
     public void enableSprite(string name)
     {
@@ -20,9 +20,9 @@ public class Scenery : MonoBehaviour
 
     public void enableWater()
     {
-        Destroy(solidFloorWater);
-        enableSprite("Water");
-        enableSprite("WaterSurface");
+        Debug.Log("wwwww");
+        foreach (GameObject g in solidFloorWater) g.SetActive(false);
+        enableSprite("WaterSegment");
     }
 
 }

@@ -34,6 +34,10 @@ public class LeafJump : PlayerAction
         {
             rigidbody.velocity += Vector2.up * Physics2D.gravity.y * (player.jumpMultiplier - 1) * Time.deltaTime;
             rigidbody.AddForce(Vector2.right * Input.GetAxisRaw("Horizontal") * player.SpringForce * Time.deltaTime);
+
+            Vector2 vel = rigidbody.velocity;
+            vel.x = Mathf.Clamp(vel.x, -player.maxSpeed, player.maxSpeed);
+            rigidbody.velocity = vel;
             if(rigidbody.velocity.y < 0 && !isFalling)
             {
                 player.animator.SetTrigger("Falling");

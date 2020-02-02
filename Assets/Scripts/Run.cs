@@ -7,6 +7,7 @@ public class Run : PlayerAction
     public Run(Player _player) : base(_player)
     {
         player.animator.SetBool("Run", true);
+        Debug.Log("Run");
         sound.PlayLoop(sound.Running);
     }
 
