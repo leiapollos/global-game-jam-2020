@@ -117,4 +117,17 @@ public class Player : MonoBehaviour
         action = new Idle(this);
     }
 
+    public void DrinkAnimation(GameObject fountain)
+    {
+        StartCoroutine(DrinkWater(fountain));
+    }
+
+    IEnumerator DrinkWater(GameObject fountain)
+    {
+        this.animator.SetTrigger("Fountain");
+        yield return new WaitForSeconds(1.5f);
+        GameObject.Destroy(fountain);
+        this.scenery.enableWater();
+    }
+
 }

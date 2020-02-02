@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAction
+public class PlayerAction 
 {
     protected Player player;
     protected Rigidbody2D rigidbody;
@@ -32,8 +32,9 @@ public class PlayerAction
     {
         if (col.name == "BlueBucket")
         {
-            GameObject.Destroy(col.gameObject);
-            player.scenery.enableWater();
+            Debug.Log("EFGR");
+            player.DrinkAnimation(col.gameObject);
+
         }
         if(col.tag == "Water")
         {
@@ -56,4 +57,6 @@ public class PlayerAction
         if (player.spriteRenderer.flipX && rigidbody.velocity.x > player.RunVelocity - 1) player.spriteRenderer.flipX = false;
         else if (!player.spriteRenderer.flipX && rigidbody.velocity.x < -(player.RunVelocity - 1)) player.spriteRenderer.flipX = true;
     }
+
+
 }
