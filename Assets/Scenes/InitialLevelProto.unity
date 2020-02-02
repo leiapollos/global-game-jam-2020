@@ -11834,6 +11834,11 @@ PrefabInstance:
       propertyPath: startAction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5739276694694197895, guid: 8fd1540af66daa245b91cfa07592527c,
+        type: 3}
+      propertyPath: sound.EndSong.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7cc3614310711104a9080eb0aa16d37a, type: 3}
     - target: {fileID: 7406797121314549270, guid: 8fd1540af66daa245b91cfa07592527c,
         type: 3}
       propertyPath: m_Constraints

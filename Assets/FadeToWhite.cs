@@ -12,6 +12,9 @@ public class FadeToWhite : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            var sound = col.GetComponent<Player>().sound;
+            sound.StopLoop();
+            sound.PlayOnce(sound.EndSong);
             StartCoroutine(Fade());
         }
     }
