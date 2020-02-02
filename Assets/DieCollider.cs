@@ -10,9 +10,12 @@ public class DieCollider : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            var sound = col.GetComponent<Player>().sound;
+            var player = col.GetComponent<Player>();
+            var sound = player.sound;
             col.GetComponent<SpriteRenderer>().color = Color.red;
             sound.PlayOnce(sound.Die);
+            player.action = new Die(player);
+            
             StartCoroutine(WaitAndRestart());
         }
     }
