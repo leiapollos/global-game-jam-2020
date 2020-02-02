@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAction 
+public class PlayerAction
 {
     protected Player player;
     protected Rigidbody2D rigidbody;
@@ -36,8 +36,9 @@ public class PlayerAction
             col.gameObject.GetComponentInChildren<Transform>().gameObject.SetActive(false);
 
         }
-        if(col.tag == "Water")
+        if (col.tag == "Water")
         {
+            player.eyes.enabled = false;
             player.animator.SetBool("Run", false);
             player.action = new Swim(player);
         }
