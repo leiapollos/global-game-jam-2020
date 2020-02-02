@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public PlayerAudio sound;
 
-    private SpriteRenderer eyes;
+    public SpriteRenderer eyes;
 
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
@@ -67,13 +67,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        eyes.enabled = action.GetType() == typeof(Idle);
-        var eyesScale = eyes.transform.localScale;
-        eyesScale.x = Mathf.Abs(eyesScale.x) * (spriteRenderer.flipX ? -1 : 1);
-        eyes.transform.localScale = eyesScale;
-        var eyesPos = eyes.transform.localPosition;
-        eyesPos.x = Mathf.Abs(eyesPos.x) * (spriteRenderer.flipX ? -1 : 1);
-        eyes.transform.localPosition = eyesPos;
+        Debug.Log(action.GetType());
         if (adaptCollider)
         {
             Vector2 S = spriteRenderer.bounds.size;
@@ -81,6 +75,14 @@ public class Player : MonoBehaviour
             GetComponent<BoxCollider2D>().offset = spriteRenderer.bounds.min + spriteRenderer.bounds.extents - transform.position;
         }
         action.DoAction();
+
+        eyes.enabled = action.GetType() == typeof(Idle);
+        var eyesScale = eyes.transform.localScale;
+        eyesScale.x = Mathf.Abs(eyesScale.x) * (spriteRenderer.flipX ? -1 : 1);
+        eyes.transform.localScale = eyesScale;
+        var eyesPos = eyes.transform.localPosition;
+        eyesPos.x = Mathf.Abs(eyesPos.x) * (spriteRenderer.flipX ? -1 : 1);
+        eyes.transform.localPosition = eyesPos;
     }
 
     public bool isGrounded()
@@ -115,6 +117,34 @@ public class Player : MonoBehaviour
     public void GoToIdle()
     {
         action = new Idle(this);
+    }
+
+    public void DrinkAnimation(GameObject fountain)
+    {
+        StartCoroutine(DrinkWater(fountain));
+    }
+
+    IEnumerator DrinkWater(GameObject fountain)
+    {
+        this.animator.SetTrigger("Fountain");
+        yield return new WaitForSeconds(1.5f);
+        GameObject.Destroy(fountain);
+        this.scenery.enableWater();
+    }
+
+    void PlayBlue()
+    {
+        sound.PlayOnce(sound.GetBlue);
+    }
+
+    void PlayGreen()
+    {
+        sound.PlayOnce(sound.GetGreen);
+    }
+
+    void PlayRed()
+    {
+        sound.PlayOnce(sound.GetRed);
     }
 
 }

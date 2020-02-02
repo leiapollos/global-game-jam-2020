@@ -32,11 +32,13 @@ public class PlayerAction
     {
         if (col.name == "BlueBucket")
         {
-            GameObject.Destroy(col.gameObject);
-            player.scenery.enableWater();
+            player.DrinkAnimation(col.gameObject);
+            col.gameObject.GetComponentInChildren<Transform>().gameObject.SetActive(false);
+
         }
-        if(col.tag == "Water")
+        if (col.tag == "Water")
         {
+            player.eyes.enabled = false;
             player.animator.SetBool("Run", false);
             player.action = new Swim(player);
         }
@@ -56,4 +58,6 @@ public class PlayerAction
         if (player.spriteRenderer.flipX && rigidbody.velocity.x > player.RunVelocity - 1) player.spriteRenderer.flipX = false;
         else if (!player.spriteRenderer.flipX && rigidbody.velocity.x < -(player.RunVelocity - 1)) player.spriteRenderer.flipX = true;
     }
+
+
 }

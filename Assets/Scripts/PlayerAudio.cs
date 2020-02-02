@@ -32,6 +32,9 @@ public class PlayerAudio
     public AudioClipVolume FallingFromSky;
     public AudioClipVolume Idle;
     public AudioClipVolume Climbing;
+    public AudioClipVolume GetBlue;
+    public AudioClipVolume GetGreen;
+    public AudioClipVolume GetRed;
 
     public void SetSources(Player player)
     {

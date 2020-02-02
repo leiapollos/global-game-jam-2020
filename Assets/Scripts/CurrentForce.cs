@@ -32,7 +32,7 @@ public class CurrentForce : MonoBehaviour
             player.GetComponent<CapsuleCollider2D>().enabled = false;
             player.GetComponent<CircleCollider2D>().enabled = true;
 
-
+            player.action = new Swim(player);
             rb.gravityScale = 0;
 
             Debug.Log("oof");
