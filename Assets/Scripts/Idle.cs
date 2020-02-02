@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class Idle : PlayerAction
 {
+    private float t = 0;
+    private float nextT = 0;
     public Idle(Player _player) : base(_player)
     {
         Vector2 vel = rigidbody.velocity;
         vel.x = 0.0f;
         rigidbody.velocity = vel;
+        nextT = Random.Range(player.minBreathInterval, player.maxBreathInterval);
     }
 
     public override void DoAction()
     {
+        
+        t += Time.deltaTime;
         base.DoAction();
         //idle
+        if (t > nextT)
+        {
+            t = 0;
+            nextT = Random.Range(player.minBreathInterval, player.maxBreathInterval);
+            sound.PlayOnce(sound.Idle);
+        }
         if (Input.GetAxisRaw("Horizontal") != 0.0f)
         {
             player.action = new Run(player);

@@ -6,12 +6,12 @@ public class Scenery : MonoBehaviour
 {
     public List<GameObject> sprites;
     public List<GameObject> solidFloorWater;
-    
+
     public void enableSprite(string name)
     {
-        foreach(GameObject s in sprites)
+        foreach (GameObject s in sprites)
         {
-            if(s.tag == name)
+            if (s.tag == name)
             {
                 s.SetActive(true);
             }

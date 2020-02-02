@@ -18,9 +18,13 @@ public class Player : MonoBehaviour
     public float RunVelocity = 4.0f;
     public float maxSpeed = 10.0f;
 
+    public float minBreathInterval = 4.0f, maxBreathInterval = 10.0f;
+
     public bool CanClimb;
 
     public PlayerAudio sound;
+
+    private SpriteRenderer eyes;
 
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
@@ -57,11 +61,19 @@ public class Player : MonoBehaviour
     {
         action = new Idle(this);
         sound.SetSources(this);
+        eyes = transform.Find("Eyes").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        eyes.enabled = action.GetType() == typeof(Idle);
+        var eyesScale = eyes.transform.localScale;
+        eyesScale.x = Mathf.Abs(eyesScale.x) * (spriteRenderer.flipX ? -1 : 1);
+        eyes.transform.localScale = eyesScale;
+        var eyesPos = eyes.transform.localPosition;
+        eyesPos.x = Mathf.Abs(eyesPos.x) * (spriteRenderer.flipX ? -1 : 1);
+        eyes.transform.localPosition = eyesPos;
         if (adaptCollider)
         {
             Vector2 S = spriteRenderer.bounds.size;
