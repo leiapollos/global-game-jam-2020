@@ -32,8 +32,8 @@ public class PlayerAction
     {
         if (col.name == "BlueBucket")
         {
-            Debug.Log("EFGR");
             player.DrinkAnimation(col.gameObject);
+            col.gameObject.GetComponentInChildren<Transform>().gameObject.SetActive(false);
 
         }
         if(col.tag == "Water")
