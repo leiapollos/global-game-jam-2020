@@ -336,22 +336,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1538508073}
   m_PrefabAsset: {fileID: 0}
---- !u!70 &151236732
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151236731}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.01, y: 2.19}
-  m_Direction: 0
 --- !u!1 &205281489
 GameObject:
   m_ObjectHideFlags: 0
