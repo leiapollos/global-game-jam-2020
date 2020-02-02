@@ -10,7 +10,7 @@ public class LabyrinthBorder : MonoBehaviour
         {
             Player player = collision.gameObject.GetComponent<Player>();
             player.adaptCollider = true;
-            player.GetComponent<BoxCollider2D>().enabled = true;
+            player.GetComponent<CapsuleCollider2D>().enabled = true;
             player.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
