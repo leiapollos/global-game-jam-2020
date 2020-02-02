@@ -21,7 +21,11 @@ public class StartMenu : MonoBehaviour
     public void RickRoll()
     {
         Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-        Debug.Log("hegsbxtnsrdjthge");
+    }
+
+    public void BobRoss()
+    {
+        Application.OpenURL("https://www.youtube.com/watch?v=h5nMXlA-_rM");
     }
 
     // Update is called once per frame

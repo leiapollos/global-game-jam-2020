@@ -1156,7 +1156,7 @@ MonoBehaviour:
   playSound: {fileID: 8300000, guid: a45fa52f7d1781d4b9221ba069d05f7a, type: 3}
   creditsSound: {fileID: 8300000, guid: 8b6f06c23dee9cf4b99d1897743c2d8a, type: 3}
   helpSound: {fileID: 8300000, guid: 35f913af68075da49bf256e290324de4, type: 3}
-  soundVolume: 0.5
+  soundVolume: 0.8
 --- !u!4 &1354542875
 Transform:
   m_ObjectHideFlags: 0
@@ -1254,7 +1254,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 925615706}
-        m_MethodName: RickRoll
+        m_MethodName: BobRoss
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

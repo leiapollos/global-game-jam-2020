@@ -149,6 +149,7 @@ public class Player : MonoBehaviour
     IEnumerator DrinkWater(GameObject fountain)
     {
         this.animator.SetTrigger("Fountain");
+        //PILINHAS:)
         yield return new WaitForSeconds(1.5f);
         GameObject.Destroy(fountain);
         this.scenery.enableWater();
