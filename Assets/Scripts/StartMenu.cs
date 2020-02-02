@@ -6,11 +6,23 @@ using UnityEngine.UI;
 public class StartMenu : MonoBehaviour
 {
     public Button yourButton;
+    public GameObject credits;
+    public GameObject credits1;
+    public GameObject creditsNextButton;
+    public GameObject creditsBackButton;
+    public GameObject help;
+    public GameObject helpBackButton;
 
     void Start()
     {
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        credits.SetActive(false);
+        credits1.SetActive(false);
+        creditsNextButton.SetActive(false);
+        creditsBackButton.SetActive(false);
+        help.SetActive(false);
+        helpBackButton.SetActive(false);
     }
 
     public void TaskOnClick()
@@ -18,19 +30,55 @@ public class StartMenu : MonoBehaviour
         Debug.Log("You have clicked the button!");
     }
 
-    public void RickRoll()
+    public IEnumerator RickRoll()
     {
+
+        yield return new WaitForSeconds(1);
         Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
 
-    public void BobRoss()
+    public IEnumerator BobRoss()
     {
+
+        yield return new WaitForSeconds(1);
         Application.OpenURL("https://www.youtube.com/watch?v=h5nMXlA-_rM");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Credits()
     {
-        
+        credits.SetActive(true);
+        creditsNextButton.SetActive(true);
     }
+
+    public void Help()
+    {
+        help.SetActive(true);
+        helpBackButton.SetActive(true);
+        StartCoroutine(RickRoll());
+    }
+
+    public void Credits1()
+    {
+        credits.SetActive(false);
+
+        creditsNextButton.SetActive(false);
+        credits1.SetActive(true);
+        creditsBackButton.SetActive(true);
+    }
+
+    public void GoBackClick()
+    {
+        creditsNextButton.SetActive(false);
+        creditsBackButton.SetActive(false);
+        credits1.SetActive(false);
+        StartCoroutine(BobRoss());
+    }
+
+    public void HelpGoBackClick()
+    {
+        helpBackButton.SetActive(false);
+        help.SetActive(false);
+    }
+
+
 }
