@@ -350,7 +350,7 @@ Transform:
   - {fileID: 3606237220824186570}
   - {fileID: 8204028605261607985}
   m_Father: {fileID: 6811805159819899279}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476980438012931220
 GameObject:
@@ -1132,63 +1132,6 @@ Transform:
   m_Father: {fileID: 8054360240764264789}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5932252122557177267
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3929499156233153553}
-  - component: {fileID: 457975633846777172}
-  m_Layer: 11
-  m_Name: WaterSurface
-  m_TagString: WaterSurface
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3929499156233153553
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5932252122557177267}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.654507, y: -16.756794, z: 5.948532}
-  m_LocalScale: {x: 18.96, y: 0.099999994, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6811805159819899279}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &457975633846777172
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5932252122557177267}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &6139794891346315651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,7 +1202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6811805158714748885}
   - component: {fileID: 6811805158714748887}
-  - component: {fileID: 6811805158714748884}
+  - component: {fileID: 8607117921246251720}
   m_Layer: 0
   m_Name: Labyrinth Border 2
   m_TagString: Untagged
@@ -1307,7 +1250,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 23.11953}
   m_EdgeRadius: 0
---- !u!114 &6811805158714748884
+--- !u!114 &8607117921246251720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1316,7 +1259,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6811805158714748882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33f5aa10c6bbe941a2ce917e7115f50, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fbc25b484f390541a7af598b93eb96d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6811805159358592003
@@ -1329,8 +1272,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6811805159358592002}
   - component: {fileID: 6811805159358592004}
-  - component: {fileID: 6811805159358592005}
-  m_Layer: 0
+  - component: {fileID: 3521263655172653109}
+  m_Layer: 2
   m_Name: Labyrinth Border 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1320,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 23.11953}
   m_EdgeRadius: 0
---- !u!114 &6811805159358592005
+--- !u!114 &3521263655172653109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1420,7 +1363,6 @@ Transform:
   - {fileID: 6811805160059381521}
   - {fileID: 6811805159358592002}
   - {fileID: 6811805158714748885}
-  - {fileID: 3929499156233153553}
   - {fileID: 2334186845645844744}
   m_Father: {fileID: 0}
   m_RootOrder: 0

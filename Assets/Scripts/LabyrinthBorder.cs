@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class LabyrinthBorder : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             Player player = collision.gameObject.GetComponent<Player>();
-            player.adaptCollider = true;
+            //player.adaptCollider = true;
             player.GetComponent<CapsuleCollider2D>().enabled = true;
             player.GetComponent<CircleCollider2D>().enabled = false;
         }
