@@ -286,6 +286,15 @@ MonoBehaviour:
     Climbing:
       clip: {fileID: 8300000, guid: 0bf7d6b60d5e27f408b206540d0d73bb, type: 3}
       volume: 1
+    GetBlue:
+      clip: {fileID: 8300000, guid: 64d2c9a9f9b3c0d4080b0d6be04debf5, type: 3}
+      volume: 1
+    GetGreen:
+      clip: {fileID: 8300000, guid: d6a8dd49f6ca7b74b8a8776e91ec6605, type: 3}
+      volume: 1
+    GetRed:
+      clip: {fileID: 8300000, guid: 7ea271cb6c4f3154c902d0e88ee22e89, type: 3}
+      volume: 1
 --- !u!95 &7144291132011785085
 Animator:
   serializedVersion: 3
