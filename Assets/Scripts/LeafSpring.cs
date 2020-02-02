@@ -15,16 +15,17 @@ public class LeafSpring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        audio.volume = 0.5f;
         audio.Play();
         Vector2 direction = transform.up.normalized;
         var player = collision.gameObject.GetComponent<Player>();
         player.action = new LeafJump(player, direction * bounceForce);
-        
+
     }
 }

@@ -3,9 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum StartAction
+{
+    FallSky,
+    Idle
+}
+
 public class Player : MonoBehaviour
 {
+    public StartAction startAction = StartAction.Idle;
     public float jumpSpeed, fallMultiplier, jumpMultiplier, highJumpMultiplier;
+
+    public float SkyFallVelocity = 8;
     public float climbSpeed = 0.05f;
     public float SpringForce = 1f;
 
@@ -13,12 +22,15 @@ public class Player : MonoBehaviour
     public bool adaptCollider = true;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public AudioSource musicManager;
     public PlayerAction action;
     public Scenery scenery;
     public float RunVelocity = 4.0f;
     public float maxSpeed = 10.0f;
 
     public float minBreathInterval = 4.0f, maxBreathInterval = 10.0f;
+
+    public AudioClip emptyTheme, blueTheme, greenTheme, redTheme;
 
     public bool CanClimb;
 
@@ -59,8 +71,17 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        action = new Idle(this);
+        musicManager = GameObject.Find("Music").GetComponent<AudioSource>();
         sound.SetSources(this);
+        switch (startAction)
+        {
+            case StartAction.Idle:
+                action = new Idle(this);
+                break;
+            case StartAction.FallSky:
+                action = new FallSky(this);
+                break;
+        }
         eyes = transform.Find("Eyes").GetComponent<SpriteRenderer>();
     }
 
@@ -121,6 +142,7 @@ public class Player : MonoBehaviour
 
     public void DrinkAnimation(GameObject fountain)
     {
+
         StartCoroutine(DrinkWater(fountain));
     }
 
@@ -134,16 +156,22 @@ public class Player : MonoBehaviour
 
     void PlayBlue()
     {
+        musicManager.clip = blueTheme;
+        musicManager.Play();
         sound.PlayOnce(sound.GetBlue);
     }
 
     void PlayGreen()
     {
+        musicManager.clip = greenTheme;
+        musicManager.Play();
         sound.PlayOnce(sound.GetGreen);
     }
 
     void PlayRed()
     {
+        musicManager.clip = redTheme;
+        musicManager.Play();
         sound.PlayOnce(sound.GetRed);
     }
 

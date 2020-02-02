@@ -244,21 +244,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b359e40d7b16c4b837e7fe9c382283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startAction: 1
   jumpSpeed: 15
   fallMultiplier: 10
   jumpMultiplier: 8
   highJumpMultiplier: 4
+  SkyFallVelocity: 15
   climbSpeed: 3
   SpringForce: 1500
   swimSpeed: 3.5
   adaptCollider: 0
   animator: {fileID: 7144291132011785085}
   spriteRenderer: {fileID: 8885891765686943931}
+  musicManager: {fileID: 0}
   scenery: {fileID: 0}
   RunVelocity: 8
   maxSpeed: 10
   minBreathInterval: 4
   maxBreathInterval: 10
+  emptyTheme: {fileID: 8300000, guid: da5ed644c8ee3524f9079d44d3dd1829, type: 3}
+  blueTheme: {fileID: 8300000, guid: 9fd8798b295e90245854e7a21d7d229d, type: 3}
+  greenTheme: {fileID: 8300000, guid: cf6e3fe3c92515247b187b36dd4ee51c, type: 3}
+  redTheme: {fileID: 8300000, guid: 248ae36c50d3a7e4d8cb7ef968af4b20, type: 3}
   CanClimb: 0
   sound:
     FadeTime: 1
@@ -273,7 +280,7 @@ MonoBehaviour:
       volume: 1
     Jumping:
       clip: {fileID: 8300000, guid: 7a29216a690fb104ba74660edbf08129, type: 3}
-      volume: 1
+      volume: 0.5
     ImpactAfterFallSky:
       clip: {fileID: 8300000, guid: dd380e8181bc8e34683580a707890428, type: 3}
       volume: 1
@@ -295,6 +302,7 @@ MonoBehaviour:
     GetRed:
       clip: {fileID: 8300000, guid: 7ea271cb6c4f3154c902d0e88ee22e89, type: 3}
       volume: 1
+  eyes: {fileID: 0}
 --- !u!95 &7144291132011785085
 Animator:
   serializedVersion: 3
