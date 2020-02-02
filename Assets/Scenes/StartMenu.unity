@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorHiglighted: {fileID: 917974466}
+  soundHiglighted: {fileID: 8300000, guid: 4247ffd7ebdfc3e4e8bdf80b2a6022f6, type: 3}
 --- !u!1 &278098175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,6 +1424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorHiglighted: {fileID: 1138366203}
+  soundHiglighted: {fileID: 8300000, guid: 4247ffd7ebdfc3e4e8bdf80b2a6022f6, type: 3}
 --- !u!61 &1700795507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1726,6 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorHiglighted: {fileID: 1212161196}
+  soundHiglighted: {fileID: 8300000, guid: 4247ffd7ebdfc3e4e8bdf80b2a6022f6, type: 3}
 --- !u!61 &1889005523
 BoxCollider2D:
   m_ObjectHideFlags: 0
